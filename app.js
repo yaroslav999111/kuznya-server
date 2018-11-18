@@ -16,8 +16,9 @@ var mongoose = require('mongoose');
 
 
 
-mongoose.connect('mongodb://35.232.84.79/kuznya');
+// mongoose.connect('mongodb://35.232.84.79/kuznya');
 
+mongoose.connect('mongodb://levie:123123123qQ@ds211694.mlab.com:11694/kuznya');
 var db = mongoose.connection;
 
 var app = express();
