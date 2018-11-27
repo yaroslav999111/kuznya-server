@@ -60,10 +60,10 @@ router.post('/sendemail', function(req, res, next) {
     var text = req.body.message;
 
     var transporter = nodemailer.createTransport("SMTP", {
-        service: 'gmail',
+        service: 'smtp.ukr.net',
         auth: {
-            user: 'proamazons@gmail.com',
-            pass: 'proamz123'
+            user: 'yeapman@ukr.net',
+            pass: 'lordprofy1'
         }
     });
 
