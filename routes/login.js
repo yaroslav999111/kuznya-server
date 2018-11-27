@@ -60,12 +60,10 @@ router.post('/sendemail', function(req, res, next) {
     var text = req.body.message;
 
     var transporter = nodemailer.createTransport({
-        service: 'smtp.ukr.net',
-        port: 465,
-        secure: true,
+        service: 'gmail',
         auth: {
-            user: 'yeapman@ukr.net',
-            pass: 'lordprofy1'
+            user: 'proamazons@gmail.com',
+            pass: 'proamz123'
         }
     });
 
@@ -82,6 +80,9 @@ router.post('/sendemail', function(req, res, next) {
         else
             res.send(info);
     });
+
+
+
 
 
 
