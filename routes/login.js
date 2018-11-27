@@ -71,7 +71,7 @@ router.post('/sendemail', function(req, res, next) {
         from: email, // sender address
         to: 'proamazons@gmail.com', // list of receivers
         subject: 'Доброго времени суток!', // Subject line
-        html: text
+        html: text + email
     };
 
     transporter.sendMail(mailOptions, function (err, info) {
