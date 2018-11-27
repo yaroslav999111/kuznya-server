@@ -62,8 +62,8 @@ router.post('/sendemail', function(req, res, next) {
     var transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: 'kuznya911911@gmail.com',
-            pass: '123123123QQQ'
+            user: 'proamazons@gmail.com',
+            pass: 'proamz123'
         }
     });
 
@@ -80,11 +80,7 @@ router.post('/sendemail', function(req, res, next) {
         else
             res.send(info);
     });
-
-
-
-
-
+    
 
 
 
