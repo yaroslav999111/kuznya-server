@@ -84,6 +84,39 @@ router.post('/sendemail', function(req, res, next) {
 
 
 
+router.post('/sendemail2', function(req, res, next) {
+
+
+    var name = req.body.name;
+    var email = req.body.email;
+    var text = req.body.message;
+
+    var transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: 'kuznya911911@gmail.com',
+            pass: '123123123QQQ'
+        }
+    });
+
+    const mailOptions = {
+        from: email, // sender address
+        to: 'proamazons@gmail.com', // list of receivers
+        subject: 'Доброго времени суток!', // Subject line
+        html: text
+    };
+
+    transporter.sendMail(mailOptions, function (err, info) {
+        if(err)
+            res.send(err);
+        else
+            res.send(info);
+    });
+});
+
+
+
+
 router.post('/getMyProjects', function(req, res, next) {
     var email = {email: req.body.email};
 

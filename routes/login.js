@@ -53,27 +53,40 @@ router.post('/addRating', function(req, res, next) {
 
 
 router.post('/sendemail', function(req, res, next) {
+
+
+    var name = req.body.name;
+    var email = req.body.email;
+    var text = req.body.message;
+
     var transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: 'proamazons@gmail.com',
-            pass: 'proamz123'
+            user: 'kuznya911911@gmail.com',
+            pass: '123123123QQQ'
         }
     });
 
     const mailOptions = {
-        from: req.body.email, // sender address
+        from: email, // sender address
         to: 'proamazons@gmail.com', // list of receivers
-        subject: 'Subject of your email', // Subject line
-        html: req.body.text + req.body.phone// plain text body
+        subject: 'Доброго времени суток!', // Subject line
+        html: text
     };
 
     transporter.sendMail(mailOptions, function (err, info) {
         if(err)
-            console.log(err);
+            res.send(err);
         else
-            console.log(info);
+            res.send(info);
     });
+
+
+
+
+
+
+
 
 });
 
