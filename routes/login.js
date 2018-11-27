@@ -59,7 +59,7 @@ router.post('/sendemail', function(req, res, next) {
     var email = req.body.email;
     var text = req.body.message;
 
-    var transporter = nodemailer.createTransport({
+    var transporter = nodemailer.createTransport("SMTP", {
         service: 'gmail',
         auth: {
             user: 'proamazons@gmail.com',
