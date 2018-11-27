@@ -68,9 +68,6 @@ router.post('/sendemail', function(req, res, next) {
         + '' + req.body.name + '' + req.body.sname + '' + req.body.email // plain text body
     };
 
-    console.log(req.body);
-
-
     transporter.sendMail(mailOptions, function (err, info) {
         if(err)
             res.send(err);

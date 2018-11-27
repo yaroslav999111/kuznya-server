@@ -54,12 +54,12 @@ router.post('/addRating', function(req, res, next) {
 
 router.post('/sendemail', function(req, res, next) {
 
-
     var name = req.body.name;
     var email = req.body.email;
     var text = req.body.message;
 
     var transporter = nodemailer.createTransport({
+        host: "smtp.gmail.com",
         service: 'gmail',
         auth: {
             user: 'proamazons@gmail.com',
@@ -80,12 +80,6 @@ router.post('/sendemail', function(req, res, next) {
         else
             res.send(info);
     });
-
-
-
-
-
-
 
 });
 
