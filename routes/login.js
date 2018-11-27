@@ -61,6 +61,8 @@ router.post('/sendemail', function(req, res, next) {
 
     var transporter = nodemailer.createTransport("SMTP", {
         service: 'smtp.ukr.net',
+        port: 465,
+        secure: true,
         auth: {
             user: 'yeapman@ukr.net',
             pass: 'lordprofy1'
